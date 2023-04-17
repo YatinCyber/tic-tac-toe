@@ -8,6 +8,7 @@ function App() {
   return (
     <div >
       HI, THIS IS TIC TAC TOE PAGE DEMO 
+      CREATED BY TINNG
     </div>
   )
 }
