@@ -18,4 +18,5 @@ const Cell = ({ ind, display, handleCell }) => {
     </div>
   );
 };
+
 export default Cell;

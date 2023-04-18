@@ -2,8 +2,10 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import './components/Button.css';
 import Cell from './components/Cell';
 import { motion, AnimatePresence } from 'framer-motion';
+import styled from 'styled-components';
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(''));
@@ -60,19 +62,30 @@ function App() {
     }
     return null;
   };
+  const StyledButton = styled.button`
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 10px 20px;
+  `;
 
   return (
     <div className="page-wrapper">
-      <h1> BOARD - GAME </h1>
-      <button onClick={resetGame}>new game</button>
+      <h3 class="animate-charcter"> BOARD GAME</h3>
+      <button className="button-reset">
+        <span>NEW GAME</span>
+        <i onClick={resetGame}></i>
+      </button>
       <div className="board-wrapper">
         {Array.from('012345678').map((ind) => (
           <Cell key={ind} ind={ind} handleCell={handleCell} display={board[ind]}></Cell>
         ))}
       </div>
       <div className={`turn ${turn === 'x' ? 'left' : 'right'}`}>
-        <Cell clsName="x" />
-        <Cell clsName="o" />
+        <Cell display="x" />
+        <Cell display="o" />
       </div>
 
       <AnimatePresence>
