@@ -14,11 +14,20 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.wrapper {
+.board-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: #1a1a1a 1px solid;
+  
+}
+
+.page-wrapper {
   width: fit-content;
   margin: 40px auto;
   text-align: center;
-  border: #1a1a1a 1px solid;
+  border: red 1px solid;
+
 }
 
 body {

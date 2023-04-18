@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Cell from './components/Cell';
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -9,20 +10,22 @@ function App() {
   //win = null - "available"
   const [win, setWin] = useState(null);
 
+  // handleCell = () => {
+    
+
+  // }
+
   return (
-    <div >
+    <div className='page-wrapper' >
       <h1> BOARD - GAME </h1>
       <button>hello game</button>
 
-      <div className="wrapper">
-        <h1>wrapper</h1>
-        {Array.from("012345678").map((ind) => (
-          <button 
-          key={ind}
-          onClick={()=> console.log(ind)}
-          >Cell {ind}</button>
+      <div className="board-wrapper">
+        
+        {Array.from("123456789").map((ind) => (
+          <Cell key={ind} ind={ind} ></Cell>
           
-                ))}
+        ))}
       </div>
     </div>
   )
