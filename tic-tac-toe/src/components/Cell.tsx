@@ -1,20 +1,22 @@
-import React from "react";
-import "./Cell.scss";
-
-
+import React from 'react';
+import { useState } from 'react';
+import './Cell.scss';
 
 interface CellProps {
-    ind: number;
-  }
-
-const Cell = ({ind} : CellProps) => {
-    
-
-    
-    return (
-        <h1>{ind}</h1>
-
-    )
-
+  ind: number;
+  display: string;
 }
+
+const Cell = ({ ind, display, handleCell }) => {
+  const handleClick = () => {
+    handleCell(ind);
+  };
+
+  return (
+    <div className="cell" onClick={handleClick}>
+      <span className={display}></span>
+    </div>
+  );
+};
+
 export default Cell;
